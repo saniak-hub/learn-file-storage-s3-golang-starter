@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"os"
@@ -104,7 +105,7 @@ func main() {
 		log.Fatalf("Couldn't create assets directory: %v", err)
 	}
 
-	awsCfg, err := config.LoadDefaultConfig(contextBackground(), config.WithRegion(cfg.s3Region))
+	awsCfg, err := config.LoadDefaultConfig(context.Background(), config.WithRegion(cfg.s3Region))
 	if err != nil {
 		log.Fatalf("Could not load aws config file %v", err)
 	}

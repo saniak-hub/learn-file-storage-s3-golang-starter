@@ -75,7 +75,7 @@ func (cfg *apiConfig) handlerUploadThumbnail(w http.ResponseWriter, r *http.Requ
 
 	_, err = io.Copy(newFile, file)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Error adding file to filesstem", err)
+		respondWithError(w, http.StatusInternalServerError, "Error adding file to filesytem", err)
 		return
 	}
 
